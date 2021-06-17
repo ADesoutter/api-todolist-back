@@ -28,7 +28,7 @@ router.post('/', (req, res ) => {
     })
 })
 // supprimer une task par son id en passant par postman
-router.delete('/id:', (req, res) => {
+router.delete('/:id', (req, res) => {
     sequelize.models.Task.destroy ({
         where:{id: req.params.id}
     }).then(() => {

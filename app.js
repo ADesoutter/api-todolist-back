@@ -1,10 +1,15 @@
 const sequelize = require("./models");
-
+const cors = require('cors');
 const express = require('express');
 
 console.log('Checking Database connection...');
 
 const app = express();
+// Cross Origin Resource Sharing -> CORS
+// Permet de faire en sorte d'autoriser un Front-End
+// à utiliser notre API
+// Express autorise le Cross Origin
+app.use(cors());
 
 // Configurer notre serveur pour utiliser ces routeurs
 const taskRouter = require('./routers/taskRouter');
